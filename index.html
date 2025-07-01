@@ -21,8 +21,8 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: -10px auto;
+
 }
 
 /* Header */
@@ -35,23 +35,17 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Default background for all pages */
 header.default-bg {
-    background-color: #333; /* Example background color */
+    background-color: #333;
 }
 
-/* Transparent on home page initially */
 header.home-transparent {
     background-color: transparent;
 }
 
-/* Solid background when scrolling */
 header.scrolled {
     background-color: #333;
 }
-
-
-
 
 nav {
     display: flex;
@@ -65,7 +59,7 @@ nav {
     font-weight: bold;
     display: flex;
     align-items: center;
-    z-index: 1001;
+    z-index: 1000;
 }
 
 .nav-links {
@@ -987,9 +981,8 @@ footer {
 <body>
     <header>
         <nav class="container">
-           
-
-            <div class="logo">  <img src="images/logo_background.png" alt="Digital Instrument Testing" height="100px" style="width:max-content;">DECCA</div>
+            <div class="logo">  
+                <a href="#home" style="text-decoration: none;"><img src="images/logo_background.png" alt="Digital Instrument Testing" height="100px" style="width:max-content;"></a>DECCA </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -1087,7 +1080,7 @@ footer {
                         <li>Timer / Stopwatch</li>
                         <li>Multimeter</li>
                         <li>Clamp Meter</li>
-                        <li>Installation Tester</li>
+                        <li>Insulation Tester</li>
                         <li>Power Meter</li>
                         <li>Energy Meter</li>
                         <li>Earth Resistance Tester</li>
@@ -1401,7 +1394,7 @@ footer {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 0) {
-        header.style.background = 'rgba(44, 90, 160, 0.95)';
+        header.style.background = 'linear-gradient(135deg, rgba(30,63,115,0.9) 0%, rgba(44,90,160,0.9) 50%, rgba(74,158,255,0.9) 100%)';
         header.style.backdropFilter = 'blur(10px)';
     } else {
         header.style.background = 'transparent';
@@ -1409,11 +1402,27 @@ window.addEventListener('scroll', () => {
     }
 });
 const menuBtn = document.getElementById('menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav-links');
 
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+    }
+});
+
+// Close menu when clicking a button inside the menu
+navLinks.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' || e.target.closest('a')) {
+        navLinks.classList.remove('active');
+    }
+});
+
     </script>
     
 </body>
