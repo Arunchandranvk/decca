@@ -670,9 +670,9 @@ footer {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 40vw, 250px), 1fr));
-    gap: clamp(1.5rem, 4vw, 2rem);
-    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    grid-template-columns: 320px 200px 1fr auto;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .footer-section h3 {
@@ -1273,9 +1273,9 @@ footer {
                     </div>
                 </div>
 
-                <div class="contact-form">
+                <div class="contact-form" >
                     <h3 style="color: #2c5aa0; margin-bottom: 2rem;">Request Quote</h3>
-                    <form>
+                    <form id="quote-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1331,11 +1331,11 @@ footer {
                         <li>Acoustic & Optical Calibration</li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section" >
                     <h3>Contact Info</h3>
                     <p>📍 Taliparamba, Kannur, Kerala</p>
                     <p>📞 +91 81390 51620</p>
-                    <p>📧 deccameasurementsolutions@gmail.com</p>
+                    <p >📧 deccameasurementsolutions@gmail.com</p>
                     <p>🕒 24/7 Emergency Service</p>
                 </div>
             </div>
@@ -1345,9 +1345,26 @@ footer {
             </div>
         </div>
     </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
 
+
+
+    (function(){
+        emailjs.init("zSrg0c9Pl_x_nrc7-");
+    })();
+    document.getElementById('quote-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        emailjs.sendForm('service_1y4secc', 'template_al5goxf', this)
+        .then(function() {
+            alert('Request sent successfully!');
+            document.getElementById('quote-form').reset();
+        }, function(error) {
+            alert('Failed to send request. Please try again.');
+            console.log('FAILED...', error);
+        });
+    });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
