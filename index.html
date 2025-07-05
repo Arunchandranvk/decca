@@ -1296,6 +1296,7 @@ footer {
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="4" placeholder="Describe your calibration requirements"></textarea>
                         </div>
+                         <div class="g-recaptcha" data-sitekey="6LelfngrAAAAAK-JoPoXT7wE0W1Dv_jGBAbDQHZb"></div>
                         <button type="submit" class="submit-btn">Send Request</button>
                     </form>
                 </div>
@@ -1346,8 +1347,16 @@ footer {
         </div>
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
 
+document.getElementById('quote-form').addEventListener('submit', function(e) {
+    if (grecaptcha.getResponse() === "") {
+        e.preventDefault();
+        alert("Please complete the CAPTCHA.");
+    }
+});
 
 
     (function(){
