@@ -976,6 +976,32 @@ footer {
         border-radius: 6px;
     }
 }
+.g-recaptcha {
+    transform: scale(1);
+    transform-origin: 0 0;
+    padding: 10px;
+}
+
+@media (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.85);
+        transform-origin: 0 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .g-recaptcha {
+        transform: scale(0.75);
+        transform-origin: 0 0;
+    }
+}
+@media (max-width: 340px) {
+    .g-recaptcha {
+        transform: scale(0.65);
+        transform-origin: 0 0;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1297,7 +1323,7 @@ footer {
                             <textarea id="message" name="message" rows="4" placeholder="Describe your calibration requirements"></textarea>
                         </div>
                          <div class="g-recaptcha" data-sitekey="6LelfngrAAAAAK-JoPoXT7wE0W1Dv_jGBAbDQHZb"></div>
-                        <button type="submit" class="submit-btn">Send Request</button>
+                        <button type="submit" class="submit-btn mt-2">Send Request</button>
                     </form>
                 </div>
             </div>
