@@ -1417,11 +1417,19 @@ footer {
             });
         });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+      document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Check if CAPTCHA is completed
+            if (grecaptcha.getResponse() === "") {
+                alert("Please complete the CAPTCHA.");
+                return;
+            }
+
+            // Show success message and reset form
             alert('Thank you for your inquiry! We will contact you within 24 hours.');
             this.reset();
+            grecaptcha.reset(); // Reset the CAPTCHA
         });
 
         // Add animation classes on scroll
