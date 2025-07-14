@@ -721,185 +721,6 @@ footer {
 }
 
 /* Responsive Design */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .container {
-        padding: 0 25px;
-    }
-    
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .industries-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    .footer-content {
-        grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    }
-}
-
-
-/* Mobile Large (480px - 575px) */
-@media (min-width: 480px) and (max-width: 575px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 65px;
-        right: -100%;
-        width: 200px;
-        background: rgba(30, 63, 115, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        gap: 0;
-        padding: 0.8rem 0;
-        transition: right 0.3s ease;
-        border-radius: 8px 0 0 8px;
-        z-index: 1000;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 0.3rem 0;
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .hero {
-        padding: 85px 0 45px;
-        min-height: 75vh;
-    }
-    
-    .services-grid,
-    .gallery-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .industries-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1.5rem;
-    }
-    
-    .gallery-item {
-        height: 200px;
-    }
-    
-    .contact-item {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .contact-icon {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
-    }
-}
-
-/* Tablet Landscape (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-    .container {
-        padding: 0 20px;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 250px;
-        background: rgba(30, 63, 115, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        gap: 0;
-        padding: 1rem 0;
-        transition: right 0.3s ease;
-        border-radius: 8px 0 0 8px;
-        z-index: 1000;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 0.5rem 0;
-    }
-    
-    .nav-links a {
-        display: block;
-        padding: 0.8rem 1rem;
-        width: 100%;
-        border-radius: 0;
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .hero {
-        padding: 100px 0 60px;
-        min-height: 85vh;
-    }
-    
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .industries-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-    
-    .gallery-item {
-        height: 250px;
-    }
-}
-
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
@@ -975,10 +796,7 @@ footer {
     .container {
         padding: 0 15px;
     }
- .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
+
     .hero {
         padding: 90px 0 50px;
     }
@@ -993,58 +811,15 @@ footer {
 }
 
 /* Small Mobile (375px and below) */
-@media (min-width: 360px) and (max-width: 399px) {
-    .container {
-        padding: 0 10px;
+@media (max-width: 375px) {
+    .contact .container {
+        padding: 0 12px;
     }
     
-    .mobile-menu-btn {
-        display: block;
+    .section-title {
+        font-size: 1.6rem;
     }
     
-    .nav-links {
-        position: fixed;
-        top: 60px;
-        right: -100%;
-        width: 180px;
-        background: rgba(30, 63, 115, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        gap: 0;
-        padding: 0.8rem 0;
-        transition: right 0.3s ease;
-        border-radius: 8px 0 0 8px;
-        z-index: 1000;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 0.3rem 0;
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .hero {
-        padding: 75px 0 35px;
-        min-height: 65vh;
-    }
-    
-    .services-grid,
-    .gallery-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .industries-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-    
-    .service-card,
     .contact-info,
     .contact-form {
         padding: 1rem;
@@ -1054,250 +829,67 @@ footer {
         flex-direction: column;
         text-align: center;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 1.2rem;
     }
     
     .contact-icon {
         width: 35px;
         height: 35px;
-        font-size: 1rem;
-        margin-right: 0;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
     }
     
     .form-group input,
     .form-group textarea {
-        padding: 8px;
+        padding: 9px 10px;
         font-size: 0.9rem;
-    }
-    
-    .submit-btn {
-        padding: 8px 18px;
-        font-size: 0.9rem;
-    }
-    
-    .gallery-item {
-        height: 160px;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 1rem;
     }
 }
 
-/* Mobile Extra Small (320px - 359px) */
-@media (max-width: 359px) {
-    .container {
-        padding: 0 8px;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-        font-size: 1.3rem;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 55px;
-        right: -100%;
-        width: 160px;
-        background: rgba(30, 63, 115, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        gap: 0;
-        padding: 0.6rem 0;
-        transition: right 0.3s ease;
-        border-radius: 8px 0 0 8px;
-        z-index: 1000;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 0.2rem 0;
-    }
-    
-    .nav-links a {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .hero {
-        padding: 70px 0 30px;
-        min-height: 60vh;
-    }
-    
-    .hero h1 {
-        font-size: 1.6rem;
-        line-height: 1.1;
-    }
-    
-    .hero p {
-        font-size: 0.85rem;
-        margin-bottom: 1.2rem;
-    }
-    
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.85rem;
+/* Extra Small Mobile (320px and below) */
+@media (max-width: 320px) {
+    .contact .container {
+        padding: 0 10px;
     }
     
     .section-title {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .services-grid,
-    .gallery-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 0.8rem;
-    }
-    
-    .industries-grid {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-    
-    .service-card {
-        padding: 0.8rem;
-    }
-    
-    .service-card h3 {
-        font-size: 1rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .service-list li {
-        padding: 0.2rem 0;
-        padding-left: 1.2rem;
-        font-size: 0.85rem;
-    }
-    
-    .gallery-item {
-        height: 140px;
-    }
-    
-    .gallery-caption {
-        padding: 8px;
-        font-size: 0.8rem;
-    }
-    
-    .gallery-overlay {
-        padding: 0.8rem;
-    }
-    
-    .gallery-overlay h3 {
-        font-size: 1rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    .gallery-overlay p {
-        font-size: 0.8rem;
-    }
-    
-    .industry-item {
-        padding: 0.8rem;
-        font-size: 0.8rem;
-        min-height: 50px;
-    }
-    
-    .feature-item {
-        padding: 1rem;
-    }
-    
-    .feature-icon {
-        font-size: 2rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .feature-item h3 {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .feature-item p {
-        font-size: 0.85rem;
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
     }
     
     .contact-info,
     .contact-form {
         padding: 0.8rem;
+        border-radius: 10px;
     }
     
     .contact-item {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
     }
     
     .contact-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
-        margin-right: 0;
-        margin-bottom: 0.3rem;
-    }
-    
-    .contact-item strong {
-        font-size: 0.9rem;
-    }
-    
-    .contact-item div:not(strong) {
+        width: 32px;
+        height: 32px;
         font-size: 0.8rem;
     }
     
     .form-group {
-        margin-bottom: 0.8rem;
-    }
-    
-    .form-group label {
-        font-size: 0.85rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 1rem;
     }
     
     .form-group input,
     .form-group textarea {
-        padding: 6px;
+        padding: 8px 10px;
         font-size: 0.85rem;
-    }
-    
-    .form-group textarea {
-        min-height: 80px;
     }
     
     .submit-btn {
-        padding: 6px 15px;
-        font-size: 0.85rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 0.8rem;
-    }
-    
-    .footer-section h3 {
-        font-size: 1rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .footer-section p,
-    .footer-section li {
-        font-size: 0.8rem;
-        margin-bottom: 0.3rem;
-    }
-    
-    .footer-bottom {
-        padding-top: 0.8rem;
-        font-size: 0.7rem;
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }
 
@@ -1317,10 +909,10 @@ footer {
         line-height: 1.3;
     }
     
-     .contact-grid {
-        grid-template-columns: 1fr;
+    .contact-grid {
         gap: 1.5rem;
     }
+    
     .contact-info,
     .contact-form {
         padding: 0.7rem;
@@ -1411,23 +1003,6 @@ footer {
                 <h1>DECCA Measurement Solutions</h1>
                 <p>Professional Calibration Services for Laboratory & Factory Instruments</p>
                 <a href="#contact" class="cta-button">Get Calibration Quote</a>
-            </div>
-        </div>
-    </section>
-
-      <section id="about" class="about-preview">
-        <div class="container">
-            <h2 class="section-title">Precision You Can Trust</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    
-                    <p>At DECCA Measurement Solutions, we specialize in providing comprehensive calibration services for a wide range of laboratory and industrial instruments. Our team of experienced engineers ensures that your equipment meets the highest standards of accuracy and compliance.</p>
-                    <p>With state-of-the-art calibration equipment and rigorous quality processes, we help businesses maintain operational excellence while meeting regulatory requirements across various industries.</p>
-                    <p>From thermal instruments to mechanical measurements, we offer complete calibration solutions tailored to your specific needs.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Precision measurement equipment">
-                </div>
             </div>
         </div>
     </section>
