@@ -1721,7 +1721,8 @@ footer {
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="4" placeholder="Describe your calibration requirements"></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">Send Request</button>
+                             <div class="g-recaptcha" data-sitekey="6LelfngrAAAAAK-JoPoXT7wE0W1Dv_jGBAbDQHZb"></div>
+                        <button type="submit" class="submit-btn mt-2">Send Request</button>
                     </form>
                 </div>
             </div>
@@ -1771,25 +1772,35 @@ footer {
         </div>
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <script>
-
-
-
-    (function(){
+  (function(){
         emailjs.init("zSrg0c9Pl_x_nrc7-");
     })();
+
+    // Form submission with CAPTCHA validation
     document.getElementById('quote-form').addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Check CAPTCHA
+        if (grecaptcha.getResponse() === "") {
+            alert("Please complete the CAPTCHA.");
+            return;
+        }
+
+        // Send form via EmailJS
         emailjs.sendForm('service_1y4secc', 'template_al5goxf', this)
         .then(function() {
-            alert('Request sent successfully!');
             document.getElementById('quote-form').reset();
+            grecaptcha.reset();  // Reset CAPTCHA after successful submission
         }, function(error) {
             alert('Failed to send request. Please try again.');
             console.log('FAILED...', error);
         });
     });
+
+
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1805,11 +1816,19 @@ footer {
             });
         });
 
-        // Form submission handler
-        document.querySelector('form').addEventListener('submit', function(e) {
+      document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
+
+            // Check if CAPTCHA is completed
+            if (grecaptcha.getResponse() === "") {
+                alert("Please complete the CAPTCHA.");
+                return;
+            }
+
+            // Show success message and reset form
             alert('Thank you for your inquiry! We will contact you within 24 hours.');
             this.reset();
+            grecaptcha.reset(); // Reset the CAPTCHA
         });
 
         // Add animation classes on scroll
